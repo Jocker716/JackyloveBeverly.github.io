@@ -12,6 +12,7 @@
             --accent: #06d6a0;
             --dark: #073b4c;
             --light: #f8f9fa;
+            --history-bg: rgba(255, 255, 255, 0.9);
         }
         
         * {
@@ -55,14 +56,14 @@
         }
         
         h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
             color: var(--dark);
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
         
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #666;
             max-width: 600px;
             margin: 0 auto 20px;
@@ -71,21 +72,21 @@
         .flower-counter {
             background: white;
             border-radius: 50px;
-            padding: 15px 30px;
+            padding: 12px 25px;
             display: inline-flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             margin-top: 15px;
         }
         
         .flower-icon {
             color: var(--primary);
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
         
         .flower-count {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: bold;
             color: var(--dark);
         }
@@ -99,7 +100,7 @@
         }
         
         .btn {
-            padding: 10px 20px;
+            padding: 10px 18px;
             border: none;
             border-radius: 50px;
             font-weight: 600;
@@ -108,6 +109,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            font-size: 0.95rem;
         }
         
         .btn-primary {
@@ -118,6 +120,11 @@
         .btn-secondary {
             background: var(--secondary);
             color: var(--dark);
+        }
+        
+        .btn-accent {
+            background: var(--accent);
+            color: white;
         }
         
         .btn:hover {
@@ -132,19 +139,20 @@
         .tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             gap: 10px;
             flex-wrap: wrap;
         }
         
         .tab {
-            padding: 12px 25px;
+            padding: 10px 22px;
             background: rgba(255, 255, 255, 0.7);
             border-radius: 50px;
             cursor: pointer;
             font-weight: 600;
             transition: all 0.3s ease;
             border: 2px solid transparent;
+            font-size: 0.95rem;
         }
         
         .tab:hover, .tab.active {
@@ -155,9 +163,9 @@
         
         .rewards-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
         }
         
         .reward-card {
@@ -172,36 +180,36 @@
         }
         
         .reward-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
         
         .reward-image {
-            height: 200px;
+            height: 180px;
             background-size: cover;
             background-position: center;
             position: relative;
         }
         
         .reward-content {
-            padding: 20px;
+            padding: 18px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
         
         .reward-title {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 1.25rem;
+            margin-bottom: 8px;
             color: var(--dark);
         }
         
         .reward-cost {
             display: flex;
             align-items: center;
-            gap: 8px;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
+            gap: 6px;
+            margin-bottom: 12px;
+            font-size: 1rem;
         }
         
         .reward-cost i {
@@ -211,8 +219,8 @@
         .progress-container {
             background: #e9ecef;
             border-radius: 10px;
-            height: 12px;
-            margin: 10px 0 15px;
+            height: 10px;
+            margin: 8px 0 12px;
             overflow: hidden;
         }
         
@@ -226,19 +234,20 @@
         .reward-actions {
             margin-top: auto;
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
         
         .redeem-btn {
             flex: 1;
             background: var(--accent);
             color: white;
-            padding: 10px;
+            padding: 8px;
             border: none;
             border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
         
         .redeem-btn:disabled {
@@ -252,26 +261,102 @@
             transform: translateY(-3px);
         }
         
-        .redeemed {
-            background: rgba(6, 214, 160, 0.1);
-            border: 2px dashed var(--accent);
-        }
-        
-        .redeemed .redeem-btn {
-            background: var(--accent);
-            cursor: default;
-        }
-        
         .level-badge {
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 12px;
+            right: 12px;
             background: var(--dark);
             color: white;
-            padding: 5px 12px;
+            padding: 4px 10px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: bold;
+        }
+        
+        .history-section {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .history-container {
+            flex: 1;
+            min-width: 300px;
+            background: var(--history-bg);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .history-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+        }
+        
+        .history-header i {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+        
+        .history-header h2 {
+            font-size: 1.4rem;
+            color: var(--dark);
+        }
+        
+        .history-list {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        
+        .history-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .history-item:last-child {
+            border-bottom: none;
+        }
+        
+        .history-content {
+            flex: 1;
+        }
+        
+        .history-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--dark);
+        }
+        
+        .history-date {
+            font-size: 0.85rem;
+            color: #777;
+        }
+        
+        .history-count {
+            background: var(--primary);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            min-width: 40px;
+            text-align: center;
+        }
+        
+        .history-count.flower {
+            background: var(--primary);
+        }
+        
+        .history-count.redeem {
+            background: var(--accent);
         }
         
         footer {
@@ -329,7 +414,7 @@
             color: var(--dark);
         }
         
-        .form-group input {
+        .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 12px;
             border: 2px solid #e0e0e0;
@@ -338,7 +423,7 @@
             transition: border-color 0.3s;
         }
         
-        .form-group input:focus {
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             border-color: var(--primary);
             outline: none;
             box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
@@ -352,62 +437,17 @@
             color: #666;
         }
         
-        .upload-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            margin-top: 10px;
-        }
-        
-        .upload-btn {
-            background: var(--primary);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            display: inline-block;
-        }
-        
-        .preview-image {
-            max-width: 100%;
-            max-height: 150px;
-            border-radius: 8px;
-            display: none;
-        }
-        
-        .edit-mode {
-            border: 2px dashed var(--accent);
-            position: relative;
-        }
-        
-        .edit-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .reward-image:hover .edit-overlay {
-            opacity: 1;
-        }
-        
         @media (max-width: 768px) {
             .rewards-container {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             }
             
             h1 {
                 font-size: 2.2rem;
+            }
+            
+            .history-section {
+                flex-direction: column;
             }
         }
     </style>
@@ -431,8 +471,8 @@
                 <button class="btn btn-secondary" id="reset-flowers">
                     <i class="fas fa-redo"></i> 重置系统
                 </button>
-                <button class="btn btn-secondary" id="edit-mode-btn">
-                    <i class="fas fa-edit"></i> 编辑模式
+                <button class="btn btn-accent" id="add-reward">
+                    <i class="fas fa-gift"></i> 添加新奖励
                 </button>
             </div>
         </header>
@@ -447,6 +487,28 @@
         
         <div class="rewards-container" id="rewards-container">
             <!-- 奖励卡片将通过JavaScript动态生成 -->
+        </div>
+        
+        <div class="history-section">
+            <div class="history-container">
+                <div class="history-header">
+                    <i class="fas fa-certificate"></i>
+                    <h2>小红花获得记录</h2>
+                </div>
+                <div class="history-list" id="flower-history">
+                    <!-- 小红花获得记录将通过JavaScript动态生成 -->
+                </div>
+            </div>
+            
+            <div class="history-container">
+                <div class="history-header">
+                    <i class="fas fa-gift"></i>
+                    <h2>奖励兑换记录</h2>
+                </div>
+                <div class="history-list" id="redeem-history">
+                    <!-- 奖励兑换记录将通过JavaScript动态生成 -->
+                </div>
+            </div>
         </div>
         
         <footer>
@@ -489,44 +551,65 @@
         </div>
     </div>
     
-    <!-- 图片编辑模态框 -->
-    <div class="modal" id="image-edit-modal">
+    <!-- 添加新奖励模态框 -->
+    <div class="modal" id="add-reward-modal">
         <div class="modal-content">
-            <i class="fas fa-image" style="font-size: 3rem; color: var(--secondary); margin-bottom: 20px;"></i>
-            <h2 id="image-edit-title">编辑奖励图片</h2>
+            <i class="fas fa-gift" style="font-size: 3rem; color: var(--secondary); margin-bottom: 20px;"></i>
+            <h2>添加新奖励</h2>
+            <p>请输入新奖励的信息</p>
             
             <div class="form-group">
-                <label for="image-url">图片URL</label>
-                <input type="text" id="image-url" placeholder="输入图片网址">
+                <label for="reward-name">奖励名称</label>
+                <input type="text" id="reward-name" placeholder="例如：香奈儿口红">
             </div>
             
-            <div class="upload-container">
-                <p>或上传本地图片：</p>
-                <label class="upload-btn">
-                    <i class="fas fa-upload"></i> 选择图片
-                    <input type="file" id="image-upload" accept="image/*" style="display: none;">
-                </label>
-                <img id="image-preview" class="preview-image" alt="预览">
+            <div class="form-group">
+                <label for="reward-description">奖励描述</label>
+                <textarea id="reward-description" placeholder="例如：经典色号，持久显色" rows="2"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="reward-cost">所需小红花</label>
+                <input type="number" id="reward-cost" placeholder="例如：12" min="1">
+            </div>
+            
+            <div class="form-group">
+                <label for="reward-level">奖励级别</label>
+                <select id="reward-level">
+                    <option value="1">小确幸 (1-5朵)</option>
+                    <option value="2">心仪小物 (6-15朵)</option>
+                    <option value="3">心动奖励 (16-30朵)</option>
+                    <option value="4">终极梦想 (31朵+)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="reward-image">图片URL</label>
+                <input type="text" id="reward-image" placeholder="输入图片网址">
+            </div>
+            
+            <div class="form-group">
+                <label for="reward-password">管理员密码</label>
+                <input type="password" id="reward-password" placeholder="输入密码">
             </div>
             
             <div class="modal-buttons">
-                <button class="btn btn-secondary" id="image-edit-cancel">取消</button>
-                <button class="btn btn-primary" id="image-edit-confirm">保存</button>
+                <button class="btn btn-secondary" id="add-reward-cancel">取消</button>
+                <button class="btn btn-primary" id="add-reward-confirm">添加奖励</button>
             </div>
         </div>
     </div>
 
     <script>
         // 奖励数据
-        const rewards = [
+        let rewards = [
             {
                 id: 1,
-                name: "爱心甜品",
+                name: "爱心便当/甜品",
                 level: 1,
-                cost: 2,
-                image: "https://imgur.com/a/wTsiLob",
-                description: "由老公亲手选择的精致甜品~",
-                redeemed: false
+                cost: 1,
+                image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                description: "由你亲手制作的爱心美食",
             },
             {
                 id: 2,
@@ -534,135 +617,127 @@
                 level: 1,
                 cost: 2,
                 image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                description: "享受老公提供的15分钟专属按摩服务",
-                redeemed: false
+                description: "享受15分钟的专属按摩服务",
             },
             {
                 id: 3,
-                name: "酸奶/饮料外卖",
+                name: "奶茶/咖啡外卖",
                 level: 1,
-                cost: 2,
-                image: "https://imgur.com/a/OF3tvUR",
-                description: "随时送达小宝宝喜欢的饮品",
-                redeemed: false
+                cost: 3,
+                image: "https://images.unsplash.com/photo-1568649929103-28ffbefaca1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                description: "随时送达你喜欢的饮品",
             },
             {
                 id: 4,
                 name: "小惊喜盲盒",
                 level: 1,
                 cost: 5,
-                image: "https://imgur.com/a/TAGVkDr",
+                image: "https://images.unsplash.com/photo-1585435611117-4d2ddae9ad30?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                 description: "价值50元以内的神秘小礼物",
-                redeemed: false
             },
             {
                 id: 5,
-                name: "普通品牌彩妆",
+                name: "普通品牌口红",
                 level: 2,
-                cost: 9,
+                cost: 7,
                 image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                description: "热门彩妆~挑宝宝喜欢的东西",
-                redeemed: false
+                description: "热门色号口红一支",
             },
             {
                 id: 6,
                 name: "Jellycat小号玩偶",
                 level: 2,
-                cost: 9,
-                image: "https://imgur.com/a/rHuURpD",
-                description: "可爱的玩偶！还可以选择新款！",
-                redeemed: false
+                cost: 8,
+                image: "https://images.unsplash.com/photo-1589874186480-ecd085096d68?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                description: "可爱的迷你玩偶",
             },
             {
                 id: 7,
                 name: "香奈儿口红",
                 level: 2,
-                cost: 13,
-                image: "https://imgur.com/a/UIAN49e",
-                description: "经典香奈儿口红唇釉一支",
-                redeemed: false
+                cost: 12,
+                image: "https://images.unsplash.com/photo-1612810806695-30f7a8258391?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                description: "经典香奈儿口红一支",
             },
             {
                 id: 8,
-                name: "小裙子或者好看的衣服",
+                name: "小裙子",
                 level: 2,
-                cost: 13,
-                image: "https://imgur.com/a/Ig2zdUz",
-                description: "潮流/设计师品牌",
-                redeemed: false
+                cost: 15,
+                image: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                description: "快时尚/设计师品牌",
             },
             {
                 id: 9,
-                name: "香奈儿粉底液或其他彩妆",
+                name: "香奈儿粉底液",
                 level: 3,
                 cost: 18,
-                image: "https://imgur.com/a/V8o4m43",
+                image: "https://images.unsplash.com/photo-1612810806563-4cb8265db55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                 description: "明星单品",
-                redeemed: false
             },
             {
                 id: 10,
                 name: "轻奢饰品",
                 level: 3,
                 cost: 20,
-                image: "https://imgur.com/a/4p3jQQE",
-                description: "名牌手链或项链",
-                redeemed: false
+                image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                description: "APM/Pandora手链或项链",
             },
             {
                 id: 11,
-                name: "Jellycat大号玩偶",
+                name: "设计师品牌小包",
                 level: 3,
                 cost: 28,
-                image: "https://imgur.com/a/OgC4Cgz",
-                description: "心心念念想要的大jellycat哦~",
-                redeemed: false
+                image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                description: "Coach/MK/TB品牌",
             },
             {
                 id: 12,
                 name: "香奈儿卡包",
                 level: 4,
-                cost: 40,
-                image: "https://imgur.com/a/z3OWh9P",
+                cost: 35,
+                image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                 description: "经典小皮件",
-                redeemed: false
             },
             {
                 id: 13,
                 name: "入门奢侈品小包",
                 level: 4,
-                cost: 60,
-                image: "https://imgur.com/a/uqWbGdp",
+                cost: 45,
+                image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                 description: "品牌入门款",
-                redeemed: false
             },
             {
                 id: 14,
                 name: "梦想高跟鞋",
                 level: 4,
                 cost: 60,
-                image: "https://imgur.com/a/6T1bJtk",
+                image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                 description: "心仪已久的设计师款",
-                redeemed: false
             },
             {
                 id: 15,
                 name: "梦想小包包",
                 level: 4,
-                cost: 75,
-                image: "https://imgur.com/a/fZb75t4",
+                cost: 70,
+                image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                 description: "大牌经典款",
-                redeemed: false
             }
         ];
+        
+        // 历史记录数据
+        let flowerHistory = [];
+        let redeemHistory = [];
         
         // DOM元素
         const flowerCountEl = document.getElementById('flower-count');
         const addFlowerBtn = document.getElementById('add-flower');
         const resetFlowersBtn = document.getElementById('reset-flowers');
-        const editModeBtn = document.getElementById('edit-mode-btn');
+        const addRewardBtn = document.getElementById('add-reward');
         const rewardsContainer = document.getElementById('rewards-container');
         const tabs = document.querySelectorAll('.tab');
+        const flowerHistoryEl = document.getElementById('flower-history');
+        const redeemHistoryEl = document.getElementById('redeem-history');
         
         // 模态框
         const passwordModal = document.getElementById('password-modal');
@@ -677,18 +752,18 @@
         const modalCancel = document.getElementById('modal-cancel');
         const modalConfirm = document.getElementById('modal-confirm');
         
-        const imageEditModal = document.getElementById('image-edit-modal');
-        const imageUrlInput = document.getElementById('image-url');
-        const imageUpload = document.getElementById('image-upload');
-        const imagePreview = document.getElementById('image-preview');
-        const imageEditCancel = document.getElementById('image-edit-cancel');
-        const imageEditConfirm = document.getElementById('image-edit-confirm');
-        const imageEditTitle = document.getElementById('image-edit-title');
+        const addRewardModal = document.getElementById('add-reward-modal');
+        const rewardNameInput = document.getElementById('reward-name');
+        const rewardDescInput = document.getElementById('reward-description');
+        const rewardCostInput = document.getElementById('reward-cost');
+        const rewardLevelInput = document.getElementById('reward-level');
+        const rewardImageInput = document.getElementById('reward-image');
+        const rewardPasswordInput = document.getElementById('reward-password');
+        const addRewardCancel = document.getElementById('add-reward-cancel');
+        const addRewardConfirm = document.getElementById('add-reward-confirm');
         
         // 当前选中的奖励
         let currentReward = null;
-        let currentEditingReward = null;
-        let isEditMode = false;
         
         // 密码设置
         const PASSWORD = "5201314"; // 设置您的密码
@@ -698,6 +773,8 @@
             // 从本地存储加载数据
             const savedFlowers = localStorage.getItem('flowerCount');
             const savedRewards = localStorage.getItem('rewards');
+            const savedFlowerHistory = localStorage.getItem('flowerHistory');
+            const savedRedeemHistory = localStorage.getItem('redeemHistory');
             
             if (savedFlowers) {
                 flowerCount = parseInt(savedFlowers);
@@ -706,18 +783,20 @@
             }
             
             if (savedRewards) {
-                const parsedRewards = JSON.parse(savedRewards);
-                rewards.forEach(reward => {
-                    const savedReward = parsedRewards.find(r => r.id === reward.id);
-                    if (savedReward) {
-                        reward.redeemed = savedReward.redeemed;
-                        reward.image = savedReward.image || reward.image;
-                    }
-                });
+                rewards = JSON.parse(savedRewards);
+            }
+            
+            if (savedFlowerHistory) {
+                flowerHistory = JSON.parse(savedFlowerHistory);
+            }
+            
+            if (savedRedeemHistory) {
+                redeemHistory = JSON.parse(savedRedeemHistory);
             }
             
             updateFlowerCount();
             renderRewards('all');
+            renderHistory();
             setupEventListeners();
         }
         
@@ -745,11 +824,8 @@
             // 密码确认
             passwordConfirm.addEventListener('click', () => {
                 if (passwordInput.value === PASSWORD) {
-                    flowerCount++;
-                    updateFlowerCount();
-                    saveToLocalStorage();
+                    addFlower();
                     passwordModal.style.display = "none";
-                    alert("小红花添加成功！");
                 } else {
                     alert("密码错误，无法添加小红花！");
                 }
@@ -764,13 +840,13 @@
             resetFlowersBtn.addEventListener('click', () => {
                 const inputPassword = prompt("请输入密码重置系统：");
                 if (inputPassword === PASSWORD) {
-                    if (confirm('确定要重置所有数据吗？这将清除所有小红花和兑换记录。')) {
+                    if (confirm('确定要重置所有数据吗？这将清除所有小红花和记录。')) {
                         flowerCount = 0;
-                        rewards.forEach(reward => {
-                            reward.redeemed = false;
-                        });
+                        flowerHistory = [];
+                        redeemHistory = [];
                         updateFlowerCount();
                         renderRewards('all');
+                        renderHistory();
                         saveToLocalStorage();
                         alert("系统已重置！");
                     }
@@ -779,14 +855,48 @@
                 }
             });
             
-            // 编辑模式切换
-            editModeBtn.addEventListener('click', () => {
-                isEditMode = !isEditMode;
-                editModeBtn.innerHTML = isEditMode 
-                    ? '<i class="fas fa-check"></i> 退出编辑' 
-                    : '<i class="fas fa-edit"></i> 编辑模式';
+            // 添加新奖励
+            addRewardBtn.addEventListener('click', () => {
+                rewardNameInput.value = "";
+                rewardDescInput.value = "";
+                rewardCostInput.value = "";
+                rewardLevelInput.value = "1";
+                rewardImageInput.value = "";
+                rewardPasswordInput.value = "";
+                addRewardModal.style.display = "flex";
+            });
+            
+            // 添加新奖励确认
+            addRewardConfirm.addEventListener('click', () => {
+                if (rewardPasswordInput.value !== PASSWORD) {
+                    alert("密码错误，无法添加新奖励！");
+                    return;
+                }
                 
+                if (!rewardNameInput.value || !rewardCostInput.value) {
+                    alert("请填写奖励名称和所需小红花数量！");
+                    return;
+                }
+                
+                const newReward = {
+                    id: Date.now(), // 使用时间戳作为唯一ID
+                    name: rewardNameInput.value,
+                    description: rewardDescInput.value || "精美礼品",
+                    cost: parseInt(rewardCostInput.value),
+                    level: parseInt(rewardLevelInput.value),
+                    image: rewardImageInput.value || "https://images.unsplash.com/photo-1563014959-7aaa83350992?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                };
+                
+                rewards.push(newReward);
+                saveToLocalStorage();
                 renderRewards(document.querySelector('.tab.active').getAttribute('data-level'));
+                addRewardModal.style.display = "none";
+                alert("新奖励添加成功！");
+            });
+            
+            // 添加新奖励取消
+            addRewardCancel.addEventListener('click', () => {
+                addRewardModal.style.display = "none";
             });
             
             // 标签切换
@@ -812,41 +922,25 @@
                     currentReward = null;
                 }
             });
+        }
+        
+        // 添加小红花
+        function addFlower() {
+            flowerCount++;
+            updateFlowerCount();
             
-            // 图片编辑模态框按钮
-            imageEditCancel.addEventListener('click', () => {
-                imageEditModal.style.display = 'none';
-                currentEditingReward = null;
+            // 添加历史记录
+            flowerHistory.unshift({
+                date: new Date().toLocaleString(),
+                count: 1
             });
             
-            imageEditConfirm.addEventListener('click', () => {
-                if (currentEditingReward) {
-                    const url = imageUrlInput.value.trim();
-                    if (url) {
-                        currentEditingReward.image = url;
-                        renderRewards(document.querySelector('.tab.active').getAttribute('data-level'));
-                        saveToLocalStorage();
-                    }
-                    imageEditModal.style.display = 'none';
-                    currentEditingReward = null;
-                }
-            });
+            // 最多保留30条记录
+            if (flowerHistory.length > 30) flowerHistory.pop();
             
-            // 图片上传处理
-            imageUpload.addEventListener('change', (e) => {
-                const file = e.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = (event) => {
-                        imagePreview.src = event.target.result;
-                        imagePreview.style.display = "block";
-                        
-                        // 自动填充URL字段
-                        imageUrlInput.value = event.target.result;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
+            renderHistory();
+            saveToLocalStorage();
+            alert("小红花添加成功！");
         }
         
         // 更新小红花显示
@@ -867,12 +961,10 @@
                 const progressText = progress >= 100 ? '100%' : `${Math.round(progress)}%`;
                 
                 const card = document.createElement('div');
-                card.className = `reward-card ${reward.redeemed ? 'redeemed' : ''} ${isEditMode ? 'edit-mode' : ''}`;
+                card.className = `reward-card`;
                 card.innerHTML = `
                     <div class="level-badge">Level ${reward.level}</div>
-                    <div class="reward-image" style="background-image: url('${reward.image}')">
-                        ${isEditMode ? `<div class="edit-overlay">点击编辑图片</div>` : ''}
-                    </div>
+                    <div class="reward-image" style="background-image: url('${reward.image}')"></div>
                     <div class="reward-content">
                         <h3 class="reward-title">${reward.name}</h3>
                         <div class="reward-cost">
@@ -884,27 +976,14 @@
                         </div>
                         <div class="reward-actions">
                             <button class="redeem-btn" data-id="${reward.id}" 
-                                ${reward.redeemed || flowerCount < reward.cost ? 'disabled' : ''}>
-                                ${reward.redeemed ? '已兑换' : '兑换奖励'}
+                                ${flowerCount < reward.cost ? 'disabled' : ''}>
+                                兑换奖励
                             </button>
                         </div>
                     </div>
                 `;
                 
                 rewardsContainer.appendChild(card);
-                
-                // 添加图片编辑功能
-                if (isEditMode) {
-                    const imageElement = card.querySelector('.reward-image');
-                    imageElement.addEventListener('click', () => {
-                        currentEditingReward = reward;
-                        imageEditTitle.textContent = `编辑 ${reward.name} 图片`;
-                        imageUrlInput.value = reward.image;
-                        imagePreview.src = reward.image;
-                        imagePreview.style.display = reward.image ? "block" : "none";
-                        imageEditModal.style.display = "flex";
-                    });
-                }
             });
             
             // 添加兑换事件监听
@@ -920,6 +999,46 @@
             });
         }
         
+        // 渲染历史记录
+        function renderHistory() {
+            flowerHistoryEl.innerHTML = '';
+            redeemHistoryEl.innerHTML = '';
+            
+            if (flowerHistory.length === 0) {
+                flowerHistoryEl.innerHTML = '<div class="history-item"><div class="history-content">暂无记录</div></div>';
+            } else {
+                flowerHistory.forEach(history => {
+                    const item = document.createElement('div');
+                    item.className = 'history-item';
+                    item.innerHTML = `
+                        <div class="history-content">
+                            <div class="history-title">获得小红花</div>
+                            <div class="history-date">${history.date}</div>
+                        </div>
+                        <div class="history-count flower">+1</div>
+                    `;
+                    flowerHistoryEl.appendChild(item);
+                });
+            }
+            
+            if (redeemHistory.length === 0) {
+                redeemHistoryEl.innerHTML = '<div class="history-item"><div class="history-content">暂无记录</div></div>';
+            } else {
+                redeemHistory.forEach(history => {
+                    const item = document.createElement('div');
+                    item.className = 'history-item';
+                    item.innerHTML = `
+                        <div class="history-content">
+                            <div class="history-title">${history.name}</div>
+                            <div class="history-date">${history.date}</div>
+                        </div>
+                        <div class="history-count redeem">-${history.cost}</div>
+                    `;
+                    redeemHistoryEl.appendChild(item);
+                });
+            }
+        }
+        
         // 显示兑换确认模态框
         function showConfirmationModal(reward) {
             currentReward = reward;
@@ -932,10 +1051,20 @@
         function redeemReward(reward) {
             if (flowerCount >= reward.cost) {
                 flowerCount -= reward.cost;
-                reward.redeemed = true;
-                
                 updateFlowerCount();
+                
+                // 添加兑换记录
+                redeemHistory.unshift({
+                    date: new Date().toLocaleString(),
+                    name: reward.name,
+                    cost: reward.cost
+                });
+                
+                // 最多保留30条记录
+                if (redeemHistory.length > 30) redeemHistory.pop();
+                
                 renderRewards(document.querySelector('.tab.active').getAttribute('data-level'));
+                renderHistory();
                 saveToLocalStorage();
                 
                 // 显示兑换成功消息
@@ -947,6 +1076,8 @@
         function saveToLocalStorage() {
             localStorage.setItem('flowerCount', flowerCount.toString());
             localStorage.setItem('rewards', JSON.stringify(rewards));
+            localStorage.setItem('flowerHistory', JSON.stringify(flowerHistory));
+            localStorage.setItem('redeemHistory', JSON.stringify(redeemHistory));
         }
         
         // 初始化变量
